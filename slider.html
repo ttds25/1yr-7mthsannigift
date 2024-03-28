@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::selection {
+            background: #0ef;
+            color: #fff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #282a35;
+        }
+
+        .wrap {
+            position: relative;
+            width: 700px;
+            height: 500px;
+            background: #c6c6c7;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wrap button {
+            position: absolute;
+            background: none;
+            border: 0 none;
+            font-size: 10vh;
+            top: 42%;
+            opacity: 0.6;
+        }
+
+        img {
+            width: 60vh;
+            height: 50vh;
+            display: none; /* Initially hide all images */
+        }
+
+        h1{
+            font-size: 3em;
+            color: #282a35;
+            margin: 15px 0;
+        }
+
+
+        #prev {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <button id="prev">&laquo;</button>
+        <button id="next">&raquo;</button>
+
+        <img src="a.jpg" alt="" class="img" id="img1">
+        <img src="b.jpg" alt="" class="img" id="img2">
+        <img src="c.jpg" alt="" class="img" id="img3">
+        <img src="d.jpg" alt="" class="img" id="img4">
+        <img src="e.jpg" alt="" class="img" id="img5">
+        <img src="f.jpg" alt="" class="img" id="img6">
+        <img src="g.jpg" alt="" class="img" id="img7">
+        <img src="h.jpg" alt="" class="img" id="img8">
+        <img src="i.jpg" alt="" class="img" id="img9">
+        <img src="j.jpg" alt="" class="img" id="img10">
+        <img src="k.jpg" alt="" class="img" id="img11">
+        <img src="l.jpg" alt="" class="img" id="img12">
+        <img src="m.jpg" alt="" class="img" id="img13">
+        <img src="n.jpg" alt="" class="img" id="img14">
+        <img src="o.jpg" alt="" class="img" id="img15">
+        <h1>I love you More💗💗💗</h1>
+    </div>
+
+    <script>
+        var img = 1;
+
+        document.querySelector("#prev").onclick = prev;
+        document.querySelector("#next").onclick = next;
+
+        // Show the initial image
+        document.querySelector("#img" + img).style.display = "block";
+
+        function prev() {
+            document.querySelector("#img" + img).style.display = "none";
+            img--;
+            if (img < 1) img = 15;
+            document.querySelector("#img" + img).style.display = "block";
+        }
+
+        function next() {
+            document.querySelector("#img" + img).style.display = "none";
+            img++;
+            if (img > 15) img = 1;
+            document.querySelector("#img" + img).style.display = "block";
+        }
+    </script>
+</body>
+</html>
